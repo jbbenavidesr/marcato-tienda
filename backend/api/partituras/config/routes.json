@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/partituras",
+      "handler": "partituras.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/partituras/count",
+      "handler": "partituras.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/partituras/:id",
+      "handler": "partituras.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/partituras",
+      "handler": "partituras.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/partituras/:id",
+      "handler": "partituras.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/partituras/:id",
+      "handler": "partituras.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
