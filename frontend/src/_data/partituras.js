@@ -1,0 +1,23 @@
+const Cache = require("@11ty/eleventy-cache-assets");
+
+/**
+ * Grabs the remote data for products to be sold.
+ *
+ * @returns {Array} Empty or array of objects
+ */
+module.exports = async () => {
+  try {
+    // Grabs either the fresh remote data or cached data (will always be fresh live)
+    const { items } = await Cache("http://localhost:1337/partituras", {
+      duration: "1d", // 1 day
+      type: "json",
+    });
+
+    return items;
+  } catch (ex) {
+    console.log(ex);
+
+    // If failed, return back an empty array
+    return [];
+  }
+};

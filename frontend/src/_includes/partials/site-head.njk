@@ -1,0 +1,21 @@
+<header class="site-head" role="banner">
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="wrapper">
+        <div class="site-head__inner">
+            <a href="/" class="site-head__brand">
+                {{ site.name }}
+            </a>
+            <burger-menu max-width="9999">
+                <nav class="navigation" aria-label="primary">
+                    <ul class="nav__list" role="list">
+                        {% for item in navigation.items %}
+                            <li>
+                                <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </burger-menu>
+        </div>
+    </div>
+</header>
