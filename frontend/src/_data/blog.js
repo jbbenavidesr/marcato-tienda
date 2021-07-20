@@ -8,7 +8,7 @@ const Cache = require("@11ty/eleventy-cache-assets");
 module.exports = async function () {
   try {
     // Grabs either the fresh remote data or cached data (will always be fresh live)
-    const data = await Cache("http://localhost:1337/partituras", {
+    const data = await Cache("http://localhost:1337/articulos", {
       duration: "1d", // 1 day
       type: "json",
     });
