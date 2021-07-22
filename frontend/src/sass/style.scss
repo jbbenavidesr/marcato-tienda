@@ -1,6 +1,12 @@
 @use 'base/reset';
+@use 'base/root';
+@use 'base/global';
 
-body {
-  font-family: sans-serif;
-  background-color: #f9f9f9;
-}
+/* Utilities */
+@use 'utilities/wrapper';
+@use 'utilities/flow';
+@use 'utilities/skip-link';
+
+/* Blocks */
+@use 'blocks/site-head';
+@use 'blocks/navigation';

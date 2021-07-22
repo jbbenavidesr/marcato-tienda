@@ -1,0 +1,23 @@
+.navigation {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.3rem 0.8rem;
+        padding: 0;
+    }
+
+    li {
+        margin: 0.1rem;
+    }
+
+    a {
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: currentColor;
+        &:hover {
+            color: var(--color-dark);
+        }
+    }
+}
