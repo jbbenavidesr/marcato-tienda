@@ -2,13 +2,13 @@ body {
     background: var(--color-light-shade);
     color: var(--color-dark);
     line-height: 1.5;
-    font-family: 'Hind', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Hind", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-weight: 400;
 }
 
 h1,
 h2 {
-    font-family: 'Halant', Georgia, 'Times New Roman', Times, serif;
+    font-family: sans-serif;
     font-weight: 600;
     line-height: 1.1;
     max-width: 30ch;
@@ -44,6 +44,11 @@ article {
 
 main:focus {
     outline: none;
+}
+
+section {
+    padding-top: calc(4 * var(--base-size));
+    padding-bottom: calc(4 * var(--base-size));
 }
 
 @media (min-width: 40em) {

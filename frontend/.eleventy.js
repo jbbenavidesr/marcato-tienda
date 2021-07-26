@@ -1,17 +1,17 @@
 module.exports = function (eleventyConfig) {
-  // Set directories to pass through to the dist folder
-  eleventyConfig.addPassthroughCopy("./src/images/");
+    // Set directories to pass through to the dist folder
+    eleventyConfig.addPassthroughCopy("./src/images/");
 
-  eleventyConfig.addWatchTarget("./src/sass/");
+    eleventyConfig.addWatchTarget("./src/sass/");
 
-  return {
-    markdownTemplateEngine: "njk",
-    dataTemplateEngine: "njk",
-    htmlTemplateEngine: "njk",
+    return {
+        markdownTemplateEngine: "njk",
+        dataTemplateEngine: "njk",
+        htmlTemplateEngine: "njk",
 
-    dir: {
-      input: "src",
-      output: "public",
-    },
-  };
+        dir: {
+            input: "src",
+            output: "public",
+        },
+    };
 };

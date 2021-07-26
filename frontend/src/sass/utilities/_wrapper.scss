@@ -5,10 +5,18 @@
  */
 .wrapper {
     width: 90vw;
-    width: clamp(16rem, 90vw, 70rem);
+    width: clamp(
+        var(--wrapper-min, 16rem),
+        var(--wrapper-ideal, 90vw),
+        var(--wrapper-max, 70rem)
+    );
     margin-left: auto;
     margin-right: auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     position: relative;
+
+    &--sm {
+        --wrapper-max: 40rem;
+    }
 }
