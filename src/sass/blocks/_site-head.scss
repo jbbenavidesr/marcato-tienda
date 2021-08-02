@@ -1,10 +1,6 @@
 .site-head {
-    padding: 0.6rem 0;
+    padding: calc(var(--base-size) * 2) 0;
     line-height: 1.1;
-
-    :focus {
-        outline-color: var(--color-light);
-    }
 
     &__inner {
         display: flex;
@@ -14,8 +10,4 @@
         gap: 0 1rem;
     }
 
-    &__brand {
-        display: block;
-        width: 3rem;
-    }
 }

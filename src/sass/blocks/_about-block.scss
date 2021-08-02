@@ -1,0 +1,21 @@
+.about-block {
+    h2 {
+        font-size: var(--fs-600);
+    }
+
+    @media (min-width: 40em) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 3em auto;
+        gap: calc(var(--base-size) * 3);
+
+        :first-child {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+        }
+
+        :last-child {
+            grid-row: 2 / span 2;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+.border {
+    &-top {
+        border-top: 2px solid currentColor;
+        padding-top: calc(var(--base-size) * var(--type-scale));
+    }
+}

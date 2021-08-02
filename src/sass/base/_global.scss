@@ -1,25 +1,26 @@
 body {
-    background: var(--color-light-shade);
-    color: var(--color-dark);
+    background: var(--clr-neutral-200);
+    color: var(--clr-neutral-800);
     line-height: 1.5;
-    font-family: "Hind", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-weight: 400;
+    font-family: var(--ff-primary);
+    font-weight: 400;   
+    font-size: var(--fs-400);
 }
 
 h1,
 h2 {
-    font-family: sans-serif;
     font-weight: 600;
     line-height: 1.1;
     max-width: 30ch;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: var(--fs-700);
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: var(--fs-700);
+    font-weight: 200;
 }
 
 a {
@@ -27,7 +28,6 @@ a {
 }
 
 :focus {
-    outline: 1px dotted currentColor;
     outline-offset: 0.2rem;
 }
 
@@ -38,8 +38,8 @@ dl {
 }
 
 article {
-    margin-top: 2.5rem;
-    font-size: 1.25rem;
+    margin-top: calc(var(--base-size) * 2);
+    font-size: var(--fs-400);
 }
 
 main:focus {
@@ -49,14 +49,4 @@ main:focus {
 section {
     padding-top: calc(4 * var(--base-size));
     padding-bottom: calc(4 * var(--base-size));
-}
-
-@media (min-width: 40em) {
-    h1 {
-        font-size: 3rem;
-    }
-
-    h2 {
-        font-size: 2.5rem;
-    }
 }

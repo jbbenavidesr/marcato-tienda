@@ -1,9 +1,54 @@
 :root {
-    --color-light: #ffffff;
-    --color-light-shade: #fafffd;
-    --color-dark: #062726;
-    --color-primary: #a42200;
-    --color-primary-shade: #b90f4c;
+   --clr-primary-200: rgb(241, 191, 192);
+   --clr-primary-300: rgb(203, 23, 33);
+   --clr-primary-400: rgb(193, 0, 0);
+   --clr-primary-500: rgb(177, 0, 0);
+   --clr-primary-600: rgb(142, 0, 0);
 
-    --base-size: 1rem;
+   --clr-secondary-200: rgb(175, 226, 188);
+   --clr-secondary-300: rgb(36, 194, 103);
+   --clr-secondary-400: rgb(0, 178, 70);
+   --clr-secondary-500: rgb(0, 148, 59);
+   --clr-secondary-600: rgb(0, 83, 33);
+
+   --clr-tertiary-200: rgb(236, 201, 224);
+   --clr-tertiary-300: rgb(193, 84, 158);
+   --clr-tertiary-400: rgb(175, 39, 136);
+   --clr-tertiary-500: rgb(144, 33, 112);
+   --clr-tertiary-600: rgb(80, 17, 62);
+
+   --clr-cuaternary-200: rgb(195, 230, 236);
+   --clr-cuaternary-300: rgb(0, 171, 190);
+   --clr-cuaternary-400: rgb(0, 152, 176);
+   --clr-cuaternary-500: rgb(0, 111, 128);
+   --clr-cuaternary-600: rgb(0, 41, 47);
+
+   --clr-quinary-200: rgb(253, 229, 153);
+   --clr-quinary-300: rgb(252, 206, 54);
+   --clr-quinary-400: rgb(251, 195, 0);
+   --clr-quinary-500: rgb(228, 177, 0);
+
+   --clr-neutral-200: rgb(255, 255, 255);
+   --clr-neutral-800: rgb(36, 31, 32);
+
+   --ff-primary: "Gotham", Roboto, "Helvetica Neue", Arial, sans-serif;
+   --ff-primary: sans-serif; // THIS IS FOR TESTING: CHANGE LATER
+
+    --base-size: 1.25rem;
+    --type-scale: 1.25;
+
+
+    --fs-400: var(--base-size);
+    --fs-300: calc(var(--fs-400) / var(--type-scale));
+    --fs-200: calc(var(--fs-300) / var(--type-scale));
+    --fs-500: calc(var(--fs-400) * var(--type-scale));
+    --fs-600: calc(var(--fs-500) * var(--type-scale));
+    --fs-700: calc(var(--fs-600) * var(--type-scale));
+    --fs-800: calc(var(--fs-700) * var(--type-scale));
+    --fs-900: calc(var(--fs-800) * var(--type-scale));
+
+    @media (min-width: 40em) {
+        --type-scale: 1.5;
+    }
 }
+

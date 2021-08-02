@@ -1,13 +1,23 @@
 @use 'base/reset';
+@use 'base/fonts';
 @use 'base/root';
 @use 'base/global';
 
 /* Utilities */
+@use 'utilities/bg';
+@use 'utilities/align';
+@use 'utilities/border';
 @use 'utilities/wrapper';
 @use 'utilities/flow';
 @use 'utilities/skip-link';
+@use 'utilities/btn';
+@use 'utilities/flex';
+@use 'utilities/auto-grid';
+@use 'utilities/split';
 
 /* Blocks */
 @use 'blocks/site-head';
 @use 'blocks/navigation';
 @use 'blocks/hero';
+@use 'blocks/card';
+@use 'blocks/about-block';
