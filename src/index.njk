@@ -1,6 +1,15 @@
-{% extends "layouts/base.njk" %}
-{% block content %}
-    <section class="[ hero ] [ bg-neutral-800 ]">
+---
+title: "Marcato - tienda de partituras"
+layout: "layouts/page.njk"
+pageHeader:
+  main: "La tienda de partituras que te hacía falta"
+  summary: "Aca se puede poner una pequeña descripción de la página que lleva a las personas a comprar."
+  button:
+    text: "Compra Ya"
+    url: "/catalogo/"
+  backgroundImage: "/placeholder.png"
+---
+<section class="[ hero ] [ bg-neutral-800 ]">
         <div class=" [ wrapper wrapper--sm ]">
             <h1>{{ pageHeader.main }}</h1>
         </div>
@@ -11,7 +20,7 @@
                 <h2>About: Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, aliquam.</h2>
             </header>
             <div class="border-top">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, commodi incidunt ad voluptates quisquam labore a amet beatae neque modi, exercitationem explicabo optio earum voluptate dolorum numquam? Modi, nemo sed.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit suscipit consequatur hic consequuntur magnam. Repudiandae animi molestiae nemo, fugiat suscipit molestias nulla sint recusandae, perferendis eveniet ab voluptatibus quas nesciunt accusantium nam illo vel, at ullam laboriosam ipsum consequatur tempore asperiores. Fugit fuga exercitationem voluptatem. Exercitationem nostrum facere minus nulla.</p>
             </div>
         </div>
     </section>
@@ -54,7 +63,7 @@
                     
                 </div>
                 <div>
-                    <a href="/catalogo/" class="[ btn ] [ bg-quinary-200 ]">Toda la tienda</a>
+                    <a href="/catalog/" class="[ btn ] [ bg-quinary-200 ]">Toda la tienda</a>
                 </div>
             </div>
         </section>
@@ -82,4 +91,3 @@
             <img src="/images/contacto.png" alt="" class=""/></div>
         </div>
     </section>
-{% endblock %}

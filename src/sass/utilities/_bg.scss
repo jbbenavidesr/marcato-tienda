@@ -44,3 +44,9 @@
         font-weight: 800;
     }
 }
+
+.pd {
+    &-2 {
+        padding: calc(2* var(--base-size));
+    }
+}

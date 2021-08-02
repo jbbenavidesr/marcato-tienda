@@ -1,0 +1,49 @@
+{% extends "layouts/base.njk" %}
+
+{% block content%}
+    <div>
+        <div class="flow">
+            <header class="bg-primary-500 pd-2">
+                <div class="wrapper">
+                    <h1>{{ title }}</h1>
+                </div>
+            </header>
+            <div class="wrapper">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi repudiandae delectus sunt quam porro. Harum eaque non fugiat hic magnam sequi aliquam nemo dignissimos reiciendis minus? Velit repudiandae quidem sit.</p></div>
+        </div>
+    </div>
+    <section>
+        <div class="wrapper auto-grid">
+            <article class="[ card ]">
+                            <div class="[ card__img ]">
+                                <img src="https://source.unsplash.com/random/300x350?music" alt="Una vista previa de la partitura"/>
+                            </div>
+                            <div class="[ card__content ] [ flex ]">
+                                <h3>Colores</h3>
+                                <a href="" class="btn">Comprar</a>
+                            </div>
+                        </article>
+
+                        <article class="[ card ]">
+                            <div class="[ card__img ]">
+                                <img src="https://source.unsplash.com/random/299x350?music" alt="Una vista previa de la partitura"/>
+                            </div>
+                            <div class="[ card__content ] [ flex ]">
+                                <h3>Colores</h3>
+                                <a href="" class="btn">Comprar</a>
+                            </div>
+                        </article>
+
+                        <article class="[ card ]">
+                            <div class="[ card__img ]">
+                                <img src="https://source.unsplash.com/random/301x350?music" alt="Una vista previa de la partitura"/>
+                            </div>
+                            <div class="[ card__content ] [ flex ]">
+                                <h3>Colores</h3>
+                                <a href="" class="btn">Comprar</a>
+                            </div>
+                        </article>
+        </div>
+    </section>
+    
+{% endblock %}
