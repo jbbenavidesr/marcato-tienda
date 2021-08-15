@@ -3,7 +3,7 @@
 @use 'base/root';
 @use 'base/global';
 
-/* Utilities */
+// Utilities 
 @use 'utilities/bg';
 @use 'utilities/align';
 @use 'utilities/border';
@@ -15,10 +15,11 @@
 @use 'utilities/auto-grid';
 @use 'utilities/split';
 
-/* Blocks */
+// Blocks
 @use 'blocks/site-head';
 @use 'blocks/navigation';
 @use 'blocks/hero';
 @use 'blocks/card';
 @use 'blocks/about-block';
 @use 'blocks/content';
+@use 'blocks/burger-menu';

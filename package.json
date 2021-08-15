@@ -5,15 +5,17 @@
   "main": "index.html",
   "scripts": {
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "watch:js": "rollup --config --watch",
     "watch:eleventy": "eleventy --serve",
     "build:sass": "sass  --no-source-map src/sass:public/css",
+    "build:js": "rollup --config",
     "build:eleventy": "eleventy",
-    "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:sass build:eleventy"
+    "start": "npm-run-all build:sass build:js --parallel watch:*",
+    "build": "npm-run-all build:*"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/5t3ph/11ty-sass-skeleton.git"
+    "url": "git+https://github.com/jbbenavidesr/marcato-tienda"
   },
   "author": "5t3ph",
   "license": "ISC",
@@ -21,6 +23,8 @@
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "npm-run-all": "^4.1.5",
+    "rollup": "^2.56.2",
+    "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.35.1"
   },
   "browserslist": [
