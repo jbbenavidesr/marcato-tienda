@@ -1,3 +1,4 @@
+require('dotenv').config();
 
 module.exports = function (eleventyConfig) {
     // Set directories to pass through to the dist folder
