@@ -9,8 +9,8 @@ var configs = {
 	files: ['main.js'],
 	formats: ['iife'],
 	default: 'iife',
-	pathIn: 'src/js',
-	pathOut: 'public/js',
+	pathIn: 'src/assets/js',
+	pathOut: 'public/assets/js',
 	minify: true,
 	sourceMap: false
 };

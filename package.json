@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "watch:sass": "sass  --no-source-map --watch src/assets/sass:public/assets/css",
     "watch:js": "rollup --config --watch",
     "watch:eleventy": "eleventy --serve",
-    "build:sass": "sass  --no-source-map src/sass:public/css",
+    "build:sass": "sass  --no-source-map src/assets/sass:public/assets/css",
     "build:js": "rollup --config",
     "build:eleventy": "eleventy",
     "start": "npm-run-all build:sass build:js --parallel watch:*",

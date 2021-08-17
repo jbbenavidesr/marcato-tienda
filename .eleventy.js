@@ -2,11 +2,11 @@ require('dotenv').config();
 
 module.exports = function (eleventyConfig) {
     // Set directories to pass through to the dist folder
-    eleventyConfig.addPassthroughCopy("./src/images/");
-    eleventyConfig.addPassthroughCopy("./src/fonts/");
+    eleventyConfig.addPassthroughCopy("./src/assets/images/");
+    eleventyConfig.addPassthroughCopy("./src/assets/fonts/");
 
-    eleventyConfig.addWatchTarget("./src/sass/");
-    eleventyConfig.addWatchTarget("./src/js/");
+    eleventyConfig.addWatchTarget("./src/assets/sass/");
+    eleventyConfig.addWatchTarget("./src/assets/js/");
 
     return {
         markdownTemplateEngine: "njk",
