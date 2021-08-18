@@ -1,0 +1,27 @@
+---
+pagination:
+  data: pages
+  size: 1
+  alias: page
+  addAllPagesToCollections: true
+permalink: "{{ page.slug | slug }}/"
+tags: "pages"
+layout: "layouts/page.njk"
+
+eleventyComputed:
+  title: "{{ page.title }}"
+---
+
+{%- for component in page.components -%}
+  {% if component.sys.contentType.sys.id == "heroSection" %}
+    {% heroSection component %}
+  {% elif component.sys.contentType.sys.id == "featuretteBlock" %}
+    <h2> featuretteBlock </h2>
+  {% elif component.sys.contentType.sys.id == "cardBlock" %}
+    <h2> cardBlock </h2>
+  {% elif component.sys.contentType.sys.id == "bannerBlock" %}
+    <h2> bannerBlock </h2>
+  {% elif component.sys.contentType.sys.id == "footerBlock" %}
+    <h2> footerBlock </h2>
+  {% endif %}
+{% endfor %}

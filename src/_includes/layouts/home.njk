@@ -1,0 +1,84 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section class="[ hero ] [ bg-neutral-800 ]">
+    <div class=" [ wrapper wrapper--sm ]">
+        <h1>La tienda de partituras que te hacía falta</h1>
+    </div>
+</section>
+<section class="[ bg-primary-500 ]">
+    <div class="[ about-block ] [ wrapper flow ]">
+        <header>
+            <h2>About: Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, aliquam.</h2>
+        </header>
+        <div class="border-top">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit suscipit consequatur hic consequuntur magnam. Repudiandae animi molestiae nemo, fugiat suscipit molestias nulla sint recusandae, perferendis eveniet ab voluptatibus quas nesciunt accusantium nam illo vel, at ullam laboriosam ipsum consequatur tempore asperiores. Fugit fuga exercitationem voluptatem. Exercitationem nostrum facere minus nulla.</p>
+        </div>
+    </div>
+</section>
+<section class="[ align-center ]">
+    <div class="wrapper flow">
+        <header class="[ text-primary-400 ]">
+            <h2>Tienda</h2>
+        </header>
+        <div class="[ auto-grid ]">
+            <article class="[ card ]">
+                <div class="[ card__img ]">
+                    <img src="https://source.unsplash.com/random/300x350?music" alt="Una vista previa de la partitura"/>
+                </div>
+                <div class="[ card__content ] [ flex ]">
+                    <h3>Colores</h3>
+                    <button class="snipcart-add-item btn" data-item-id="starry-night" data-item-price="79.99" data-item-url="/paintings/starry-night" data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh." data-item-image="/assets/images/starry-night.jpg" data-item-name="The Starry Night">
+                        Add to cart
+                    </button>
+                </div>
+            </article>
+            <article class="[ card ]">
+                <div class="[ card__img ]">
+                    <img src="https://source.unsplash.com/random/299x350?music" alt="Una vista previa de la partitura"/>
+                </div>
+                <div class="[ card__content ] [ flex ]">
+                    <h3>Colores</h3>
+                    <a href="" class="btn">Comprar</a>
+                </div>
+            </article>
+            <article class="[ card ]">
+                <div class="[ card__img ]">
+                    <img src="https://source.unsplash.com/random/301x350?music" alt="Una vista previa de la partitura"/>
+                </div>
+                <div class="[ card__content ] [ flex ]">
+                    <h3>Colores</h3>
+                    <a href="" class="btn">Comprar</a>
+                </div>
+            </article>
+        </div>
+        <div>
+            <a href="/catalog/" class="[ btn ] [ bg-quinary-200 ]">Toda la tienda</a>
+        </div>
+    </div>
+</section>
+<section class="[ bg-quinary-200 ]">
+    <div class="wrapper">
+        <header class="align-center">
+            <h2>Blog</h2>
+        </header>
+        {% for item in blog %}
+            <h3>{{ item.Titulo }}</h3>
+        {% endfor %}
+    </div>
+</section>
+<section>
+    <div class="[ wrapper ] [ split ]">
+        <div class="flow">
+            <header>
+                <h2 class="text-cuaternary-400 weight-800">Contacto</h2>
+            </header>
+            <div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus quo ipsa placeat autem nihil quod odit quam pariatur tempore eum.</p>
+            </div>
+        </div>
+        <div>
+            <img src="/images/contacto.png" alt="" class=""/></div>
+    </div>
+</section>
+{% endblock %}
