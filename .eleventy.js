@@ -3,6 +3,8 @@ require("dotenv").config();
 // Import shortcodes
 const shortcodePath = "./src/_11ty/shortcodes/";
 const heroSection = require(shortcodePath + "heroSection");
+const contentSection = require(shortcodePath + "contentSection");
+const featuredProductsSection = require(shortcodePath + "featuredProductsSection");
 
 module.exports = function (eleventyConfig) {
     // Set directories to pass through to the dist folder
@@ -12,9 +14,12 @@ module.exports = function (eleventyConfig) {
     // Set directories of assets to add as watch targets.
     eleventyConfig.addWatchTarget("./src/assets/sass/");
     eleventyConfig.addWatchTarget("./src/assets/js/");
+    eleventyConfig.addWatchTarget("./src/_11ty/shortcodes/");
 
     // Define shortcodes
     eleventyConfig.addShortcode("heroSection", heroSection);
+    eleventyConfig.addShortcode("contentSection", contentSection);
+    eleventyConfig.addShortcode("featuredProductsSection", featuredProductsSection);
 
     return {
         markdownTemplateEngine: "njk",

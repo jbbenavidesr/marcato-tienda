@@ -15,10 +15,10 @@ eleventyComputed:
 {%- for component in page.components -%}
   {% if component.sys.contentType.sys.id == "heroSection" %}
     {% heroSection component %}
-  {% elif component.sys.contentType.sys.id == "featuretteBlock" %}
-    <h2> featuretteBlock </h2>
-  {% elif component.sys.contentType.sys.id == "cardBlock" %}
-    <h2> cardBlock </h2>
+  {% elif component.sys.contentType.sys.id == "contentSection" %}
+    {% contentSection component %}
+  {% elif component.sys.contentType.sys.id == "featuredProductsSection" %}
+    {% featuredProductsSection component %}
   {% elif component.sys.contentType.sys.id == "bannerBlock" %}
     <h2> bannerBlock </h2>
   {% elif component.sys.contentType.sys.id == "footerBlock" %}
