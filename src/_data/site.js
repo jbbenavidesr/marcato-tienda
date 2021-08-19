@@ -6,12 +6,9 @@ const client = contentful.createClient({
 
 module.exports = function () {
     return client
-        .getEntries({ content_type: "headerNavigation", order: "fields.order" })
+        .getEntry("1EPmrNFJNV5pfHXnenPHLH")
         .then(function (response) {
-            const navItem = response.items.map(function (navItem) {
-                return navItem.fields;
-            });
-            return navItem;
+            return response.fields;
         })
         .catch(console.error);
 };
