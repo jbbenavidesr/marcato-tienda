@@ -7,6 +7,7 @@ const client = contentful.createClient({
 const imageProcessing = require("../utils/imageProcessing");
 
 module.exports = async function (featuredProductSection) {
+    const url = this.page.url;
     return await Promise.all(
         featuredProductSection.fields.productList.map(function(partitura){
             return client.getEntry(partitura.sys.id)
@@ -20,7 +21,7 @@ module.exports = async function (featuredProductSection) {
                                 <button class="snipcart-add-item btn" 
                                     data-item-id="${partitura.sys.id}"
                                     data-item-price="${response.fields.precio}"
-                                    data-item-url="{{ page.url }}"
+                                    data-item-url="${ url }"
                                     data-item-description="${ response.fields.descripcionLarga }"
                                     data-item-image="${ response.fields.imagen.fields.file.url }"
                                     data-item-name="${ response.fields.title }">
@@ -32,7 +33,6 @@ module.exports = async function (featuredProductSection) {
                 console.log(error);
             })
         })).then(function(cards){
-            console.log(cards)
             return `<section class="[ align-center ]">
                         <div class="wrapper flow">
                             <header class="[ text-primary-400 ]">
