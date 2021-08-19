@@ -5,22 +5,22 @@
             <a href="/" class="site-head__brand">
                 {{ site.name }}
             </a>
-            <div class="split">
+            <div class="[ flex flex--gap ]">
                 <burger-menu max-width="9999">
                     <nav class="navigation" aria-label="primary">
                         <ul class="nav__list" role="list">
                             {% for item in pages %}
                                 {% if item.navigation %}
-                                <li>
-                                    <a href="{{ item.slug }}" {{ helpers.getLinkActiveState(item.slug, page.url) | safe }}>{{ item.navigationName }}</a>
-                                </li>
+                                    <li>
+                                        <a href="{{ item.slug }}" {{ helpers.getLinkActiveState(item.slug, page.url) | safe }}>{{ item.navigationName }}</a>
+                                    </li>
                                 {% endif %}
                             {% endfor %}
                         </ul>
                     </nav>
                 </burger-menu>
                 <button class="snipcart-checkout">
-                    {% include "icons/cart.svg" %} 
+                    {% include "icons/cart.svg" %}
                 </button>
             </div>
         </div>

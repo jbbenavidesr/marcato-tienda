@@ -2,17 +2,17 @@
 pagination:
   data: pages
   size: 1
-  alias: page
+  alias: contentfulPage
   addAllPagesToCollections: true
-permalink: "{{ page.slug | slug }}/"
+permalink: "{{ contentfulPage.slug | slug }}/"
 tags: "pages"
 layout: "layouts/page.njk"
 
 eleventyComputed:
-  title: "{{ page.title }}"
+  title: "{{ contentfulPage.title }}"
 ---
 
-{%- for component in page.components -%}
+{%- for component in contentfulPage.components -%}
   {% if component.sys.contentType.sys.id == "heroSection" %}
     {% heroSection component %}
   {% elif component.sys.contentType.sys.id == "contentSection" %}
@@ -25,3 +25,5 @@ eleventyComputed:
     <h2> footerBlock </h2>
   {% endif %}
 {% endfor %}
+
+{{ contentfulPage.components[2].fields.productList | log }}

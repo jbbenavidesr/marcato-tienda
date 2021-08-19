@@ -14,12 +14,12 @@ module.exports = function (eleventyConfig) {
     // Set directories of assets to add as watch targets.
     eleventyConfig.addWatchTarget("./src/assets/sass/");
     eleventyConfig.addWatchTarget("./src/assets/js/");
-    eleventyConfig.addWatchTarget("./src/_11ty/shortcodes/");
+    eleventyConfig.addWatchTarget(shortcodePath);
 
     // Define shortcodes
     eleventyConfig.addShortcode("heroSection", heroSection);
     eleventyConfig.addShortcode("contentSection", contentSection);
-    eleventyConfig.addShortcode("featuredProductsSection", featuredProductsSection);
+    eleventyConfig.addNunjucksAsyncShortcode("featuredProductsSection", featuredProductsSection);
 
     return {
         markdownTemplateEngine: "njk",
