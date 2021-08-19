@@ -9,12 +9,10 @@
                 <burger-menu max-width="9999">
                     <nav class="navigation" aria-label="primary">
                         <ul class="nav__list" role="list">
-                            {% for item in pages %}
-                                {% if item.navigation %}
-                                    <li>
-                                        <a href="{{ item.slug }}" {{ helpers.getLinkActiveState(item.slug, page.url) | safe }}>{{ item.navigationName }}</a>
-                                    </li>
-                                {% endif %}
+                            {% for item in navigation %}
+                                <li>
+                                    <a href="{{ item.link }}" {{ helpers.getLinkActiveState(item.link, page.url) | safe }}>{{ item.displayName }}</a>
+                                </li>
                             {% endfor %}
                         </ul>
                     </nav>

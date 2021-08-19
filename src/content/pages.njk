@@ -21,8 +21,6 @@ eleventyComputed:
     {% featuredProductsSection component %}
   {% elif component.sys.contentType.sys.id == "featuredBlogPostsSection" %}
     {% featuredBlogPostsSection component %}
-  {% elif component.sys.contentType.sys.id == "footerBlock" %}
-    <h2> footerBlock </h2>
   {% endif %}
 {% endfor %}
 
