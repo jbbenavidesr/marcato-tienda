@@ -19,11 +19,10 @@ eleventyComputed:
     {% contentSection component %}
   {% elif component.sys.contentType.sys.id == "featuredProductsSection" %}
     {% featuredProductsSection component %}
-  {% elif component.sys.contentType.sys.id == "bannerBlock" %}
-    <h2> bannerBlock </h2>
+  {% elif component.sys.contentType.sys.id == "featuredBlogPostsSection" %}
+    {% featuredBlogPostsSection component %}
   {% elif component.sys.contentType.sys.id == "footerBlock" %}
     <h2> footerBlock </h2>
   {% endif %}
 {% endfor %}
 
-{{ contentfulPage.components[2].fields.productList | log }}

@@ -5,6 +5,7 @@ const shortcodePath = "./src/_11ty/shortcodes/";
 const heroSection = require(shortcodePath + "heroSection");
 const contentSection = require(shortcodePath + "contentSection");
 const featuredProductsSection = require(shortcodePath + "featuredProductsSection");
+const featuredBlogPostsSection = require(shortcodePath + "featuredBlogPostsSection");
 
 module.exports = function (eleventyConfig) {
     // Set directories to pass through to the dist folder
@@ -19,6 +20,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("heroSection", heroSection);
     eleventyConfig.addShortcode("contentSection", contentSection);
     eleventyConfig.addNunjucksAsyncShortcode("featuredProductsSection", featuredProductsSection);
+    eleventyConfig.addNunjucksAsyncShortcode("featuredBlogPostsSection", featuredBlogPostsSection);
 
     return {
         markdownTemplateEngine: "njk",
