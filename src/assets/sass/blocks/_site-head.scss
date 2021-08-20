@@ -10,4 +10,23 @@
         gap: 0 1rem;
     }
 
+    &__brand {
+        max-width: calc(var(--base-size) * 15);
+    }
+
+    &__cart {
+        width: calc(3 * var(--base-size));
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            outline: dotted currentColor 2px;
+        }
+
+        > svg {
+            width: 100%;
+        }
+    }
 }
