@@ -3,12 +3,12 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 0.3rem 0.8rem;
+        gap: 0.5rem 0.8rem;
         padding: 0;
     }
 
     li {
-        margin: 0.1rem;
+        margin: 0.5rem;
     }
 
     a {
@@ -16,8 +16,35 @@
         text-transform: uppercase;
         text-decoration: none;
         color: currentColor;
+        position: relative;
+
+        &[data-state="active"],
+        &[aria-current="page"] {
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                background: currentColor;
+            }
+
+            &::before {
+                width: 115%;
+                height: 0.1rem;
+                bottom: 150%;
+                left: -10%;
+            }
+
+            &::after {
+                width: 0.1rem;
+                height: 170%;
+                top: -50%;
+                left: -10%;
+            }
+        }
+
         &:hover {
-            color: var(--color-dark);
+            color: var(--clr-primary-400);
         }
     }
 }

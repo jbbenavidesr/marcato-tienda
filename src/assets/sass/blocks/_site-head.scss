@@ -12,6 +12,7 @@
 
     &__brand {
         max-width: calc(var(--base-size) * 15);
+        margin-inline-end: var(--base-size);
     }
 
     &__cart {
