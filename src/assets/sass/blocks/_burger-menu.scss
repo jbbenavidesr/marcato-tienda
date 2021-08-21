@@ -58,7 +58,15 @@
                 height: 100%;
                 visibility: hidden;
                 opacity: 0;
-                background: var(--clr-primary-200);
+                background-image: linear-gradient(
+                        135deg,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 0.8) 50%
+                    ),
+                    url("/assets/images/Home.png");
+                background-position: bottom;
+                background-size: cover;
+                color: var(--clr-neutral-200);
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
             }
@@ -66,15 +74,14 @@
 
         .navigation {
             ul {
-                display: block;
-
-                > * + * {
-                    margin-top: 2rem;
-                }
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: calc(1.5 * var(--base-size));
             }
 
             li {
-                font-size: 1.5rem;
+                font-size: 2.5rem;
             }
         }
 
@@ -99,7 +106,13 @@
                     border-color: transparent;
                     transform: rotate(180deg);
 
-                    &::before{
+                    &::before,
+                    &::after {
+                        background: var(--clr-neutral-200);
+                        border-color: var(--clr-neutral-200);
+                    }
+
+                    &::before {
                         top: 0;
                         transform: rotate(45deg);
                     }
