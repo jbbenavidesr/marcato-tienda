@@ -3,7 +3,7 @@
 @use 'base/root';
 @use 'base/global';
 
-// Utilities 
+// Utilities
 @use 'utilities/bg';
 @use 'utilities/align';
 @use 'utilities/border';
@@ -23,3 +23,4 @@
 @use 'blocks/about-block';
 @use 'blocks/content';
 @use 'blocks/burger-menu';
+@use 'blocks/featured-products-section';

@@ -9,31 +9,39 @@ const imageProcessing = require("../utils/imageProcessing");
 module.exports = async function (featuredProductSection) {
     const url = this.page.url;
     return await Promise.all(
-        featuredProductSection.fields.productList.map(function(partitura){
-            return client.getEntry(partitura.sys.id)
-            .then(function (response){
-                return `<article class="[ card ]">
+        featuredProductSection.fields.productList.map(function (partitura) {
+            return client
+                .getEntry(partitura.sys.id)
+                .then(function (response) {
+                    return `<article class="[ card ]">
                             <div class="[ card__img ]">
                                 ${imageProcessing(response.fields.imagen)}
                             </div>
                             <div class="[ card__content ] [ flex ]">
-                                <h3>${ response.fields.title }</h3>
+                                <h3>${response.fields.title}</h3>
                                 <button class="snipcart-add-item btn" 
                                     data-item-id="${partitura.sys.id}"
                                     data-item-price="${response.fields.precio}"
-                                    data-item-url="${ url }"
-                                    data-item-description="${ response.fields.descripcionLarga }"
-                                    data-item-image="${ response.fields.imagen.fields.file.url }"
-                                    data-item-name="${ response.fields.title }">
+                                    data-item-url="${url}"
+                                    data-item-description="${
+                                        response.fields.descripcionLarga
+                                    }"
+                                    data-item-image="${
+                                        response.fields.imagen.fields.file.url
+                                    }"
+                                    data-item-name="${response.fields.title}">
                                     Comprar
                                 </button>
                             </div>
                         </article>`;
-            }).catch(function(error){
-                console.log(error);
-            })
-        })).then(function(cards){
-            return `<section class="[ align-center ]">
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        })
+    )
+        .then(function (cards) {
+            return `<section class="[ featured-products-section ] [ align-center ]">
                         <div class="wrapper flow">
                             <header class="[ text-primary-400 ]">
                                 <h2>${featuredProductSection.fields.title}</h2>
@@ -48,7 +56,8 @@ module.exports = async function (featuredProductSection) {
                             </div>
                         </div>
                     </section>`;
-        }).catch(function (error){
+        })
+        .catch(function (error) {
             console.log(error);
         });
 };
