@@ -33,6 +33,9 @@ module.exports = async function (featuredProductSection) {
                                     data-item-description="${
                                         response.fields.descripcionLarga
                                     }"
+                                    data-item-file-guid="${
+                                        response.fields.guid
+                                    }"
                                     data-item-image="${
                                         response.fields.imagen.fields.file.url
                                     }"
