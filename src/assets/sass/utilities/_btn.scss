@@ -1,10 +1,24 @@
 .btn {
     display: inline-block;
-    padding: 0.75em 1.25em;
-    border-radius: 0.5em;
+    text-align: center;
     text-decoration: none;
+    margin: 2px 0;
+    padding: 0.75em 1.25em;
+    border: solid 2px transparent;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background: var(--btn-background, var(--clr-primary-400));
+    color: var(--btn-color, var(--clr-neutral-200));
 
-    &:hover, &:focus {
-        opacity: 0.7;
+    &:hover,
+    &:focus {
+        color: var(--btn-background, var(--clr-primary-400));
+        background: var(--btn-color, var(--clr-neutral-200));
+        border-color: currentColor;
+    }
+
+    &:active {
+        transform: translateY(1px);
+        filter: saturate(150%);
     }
 }

@@ -18,7 +18,14 @@ module.exports = async function (featuredProductSection) {
                                 ${imageProcessing(response.fields.imagen)}
                             </div>
                             <div class="[ card__content ] [ flex ]">
-                                <h3>${response.fields.title}</h3>
+                                <div>
+                                    <h3 class="card__title">${
+                                        response.fields.title
+                                    }</h3>
+                                    <p class="card__info">$${response.fields.precio.toLocaleString(
+                                        "es-CO"
+                                    )}</p>
+                                </div>
                                 <button class="snipcart-add-item btn" 
                                     data-item-id="${partitura.sys.id}"
                                     data-item-price="${response.fields.precio}"
@@ -29,6 +36,7 @@ module.exports = async function (featuredProductSection) {
                                     data-item-image="${
                                         response.fields.imagen.fields.file.url
                                     }"
+                                    data-item-max-quantity="1"
                                     data-item-name="${response.fields.title}">
                                     Comprar
                                 </button>
@@ -50,7 +58,7 @@ module.exports = async function (featuredProductSection) {
                                 ${cards.join("")}
                             </div>
                             <div>
-                                <a href="/catalog/" class="[ btn ] [ bg-quinary-200 ]">${
+                                <a href="/catalog/" class="[ btn ]">${
                                     featuredProductSection.fields.ctaText
                                 }</a>
                             </div>
