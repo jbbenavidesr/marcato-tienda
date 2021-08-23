@@ -1,6 +1,8 @@
 .auto-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size, 18rem), 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(var(--auto-grid-min-size, 18rem), 100%), 1fr)
+    );
     grid-gap: 1rem;
-  }
-  
+}

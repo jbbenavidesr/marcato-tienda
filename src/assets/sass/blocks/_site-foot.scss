@@ -67,6 +67,11 @@
                 flex-grow: 999;
                 flex-basis: 0;
                 min-width: 70%;
+
+                &::placeholder {
+                    color: var(--btn-background);
+                    opacity: 0.5;
+                }
             }
 
             &__btn {
