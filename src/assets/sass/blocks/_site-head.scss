@@ -11,12 +11,12 @@
     }
 
     &__brand {
-        max-width: calc(var(--base-size) * 5);
         margin-inline-end: var(--base-size);
-
-        @media (min-width: 40em) {
-            max-width: calc(var(--base-size) * 15);
-        }
+        width: clamp(
+            calc(var(--base-size) * 5),
+            40%,
+            calc(var(--base-size) * 15)
+        );
     }
 
     &__cart {

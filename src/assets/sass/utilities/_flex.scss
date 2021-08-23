@@ -6,6 +6,14 @@
     align-items: center;
 
     &--gap {
-        --flex-gap: var(--base-size)
+        --flex-gap: var(--base-size);
+    }
+
+    &--align-start {
+        align-items: flex-start;
+    }
+
+    &--justify-start {
+        justify-content: flex-start;
     }
 }

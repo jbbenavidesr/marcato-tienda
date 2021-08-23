@@ -1,4 +1,81 @@
 .site-foot {
+    --foot-pad: calc(var(--base-size) * 3);
+    padding-top: var(--foot-pad);
+    padding-bottom: var(--foot-pad);
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5em;
+
+        & > :first-child {
+            flex-basis: 40%;
+            flex-grow: 1;
+        }
+
+        & > :last-child {
+            flex-basis: 0;
+            flex-grow: 999;
+            min-width: 50%;
+        }
+    }
+
+    &__brand {
+        display: inline-block;
+        width: clamp(
+            calc(var(--base-size) * 10),
+            100%,
+            calc(var(--base-size) * 20)
+        );
+        margin-inline-end: var(--base-size);
+    }
+
+    &__links {
+        padding: 0;
+        font-size: var(--fs-300);
+
+        a {
+            text-decoration: none;
+
+            &:focus,
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:focus {
+                outline: dotted 2px currentColor;
+            }
+        }
+    }
+
+    &__subscription {
+        label,
+        .btn {
+            text-transform: capitalize;
+        }
+
+        .inline-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+
+            &__input {
+                background-color: var(--btn-color);
+                border-radius: 0.5em;
+                border: solid 3px var(--btn-background);
+                padding: 0.3em;
+                flex-grow: 999;
+                flex-basis: 0;
+                min-width: 70%;
+            }
+
+            &__btn {
+                flex-basis: 20%;
+                flex-grow: 1;
+            }
+        }
+    }
+
     --btn-background: var(--clr-neutral-200);
     --btn-color: var(--clr-cuaternary-500);
 }

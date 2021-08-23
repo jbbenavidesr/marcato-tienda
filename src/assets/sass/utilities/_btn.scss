@@ -21,4 +21,8 @@
         transform: translateY(1px);
         filter: saturate(150%);
     }
+
+    &--sm {
+        padding: 0.3em 0.75em;
+    }
 }
