@@ -3,4 +3,9 @@
         border-top: 2px solid currentColor;
         padding-top: calc(var(--base-size) * var(--type-scale));
     }
+
+    &-bottom {
+        border-bottom: 2px solid currentColor;
+        padding-bottom: calc(var(--base-size) * var(--type-scale));
+    }
 }

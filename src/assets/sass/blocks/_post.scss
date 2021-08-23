@@ -20,10 +20,11 @@
         display: inline-block;
         font-weight: 600;
         text-decoration: none;
+        border-bottom: solid 2px transparent;
 
         &:focus,
         &:hover {
-            border-bottom: solid 2px currentColor;
+            border-color: currentColor;
         }
 
         &:active {

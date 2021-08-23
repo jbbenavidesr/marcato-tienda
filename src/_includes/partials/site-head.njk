@@ -3,23 +3,24 @@
     <div class="wrapper">
         <div class="site-head__inner">
             <a href="/" class="site-head__brand" aria-label="{{ site.name }} - Página Principal">
-                <img src="https:{{ site.logo.fields.file.url }}" alt=""></a>
-                <div class="[ flex flex--gap ]">
-                    <burger-menu>
-                        <nav class="navigation" aria-label="primary">
-                            <ul class="nav__list" role="list">
-                                {% for item in navigation %}
-                                    <li>
-                                        <a href="{{ item.link }}" {{ helpers.getLinkActiveState(item.link, page.url) | safe }}>{{ item.displayName }}</a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </nav>
-                    </burger-menu>
-                    <button class="[ site-head__cart ] [ snipcart-checkout ]">
-                        {% include "icons/cart.svg" %}
-                    </button>
-                </div>
+                <img src="https:{{ site.brandImages[0].fields.file.url }}" alt=""/>
+            </a>
+            <div class="[ flex flex--gap ]">
+                <burger-menu>
+                    <nav class="navigation" aria-label="primary">
+                        <ul class="nav__list" role="list">
+                            {% for item in navigation %}
+                                <li>
+                                    <a href="{{ item.link }}" {{ helpers.getLinkActiveState(item.link, page.url) | safe }}>{{ item.displayName }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                </burger-menu>
+                <button class="[ site-head__cart ] [ snipcart-checkout ]">
+                    {% include "icons/cart.svg" %}
+                </button>
             </div>
         </div>
-    </header>
+    </div>
+</header>

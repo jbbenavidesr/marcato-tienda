@@ -1,0 +1,33 @@
+<footer class="[ site-foot ] [ bg-cuaternary-500 ]">
+    <div class="wrapper flow">
+        <div class="[ site-foot__inner ] [ border-bottom split ]">
+            <a href="/" class="site-foot__brand" aria-label="{{ site.name }} - Página Principal">
+                <img src="https:{{ site.brandImages[1].fields.file.url }}" alt=""/>
+            </a>
+            <div class="[ site-foot__content ] [ flow ]">
+                <ul class="[ site-foot__links ] [ flex ]" role="list">
+                    {% for link in site.footer.links %}
+                        <li class="site-foot__link">
+                            <a href="{{ link.url }}">{{ link.texto }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div>
+                    <h3>{{ site.footer.subscribeForm.title }}</h3>
+                    <p>{{ site.footer.subscribeForm.description }}</p>
+                    <form class="site-foot__subscription">
+                        <label class="weight-800" for="subscribe">{{ site.footer.subscribeForm.label }}</label>
+                        <div class="flex">
+                            <input type="email" id="subscribe" name="email" placeholder="nombre@email.com" class="bg-cuaternary-500"/>
+                            <button class="btn">{{ site.footer.subscribeForm.submitButton }}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="[ site-foot__copyright ] [ text-size-300 ]">
+            <p>&copy; Marcato 2021. Todos los derechos reservados.</p>
+            <p>Desarrollo por Juan B. Benavides y diseño por Stephanía Arango</p>
+        </div>
+    </div>
+</footer>
