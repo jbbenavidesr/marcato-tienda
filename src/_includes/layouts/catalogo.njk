@@ -1,6 +1,5 @@
 {% extends "layouts/base.njk" %}
-
-{% block content%}
+{% block content %}
     <div>
         <div class="flow">
             <header class="bg-primary-500 pd-2">
@@ -9,41 +8,29 @@
                 </div>
             </header>
             <div class="wrapper">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi repudiandae delectus sunt quam porro. Harum eaque non fugiat hic magnam sequi aliquam nemo dignissimos reiciendis minus? Velit repudiandae quidem sit.</p></div>
+                {{ content | safe }}
+            </div>
         </div>
     </div>
-    <section>
+    <section id="product-list">
         <div class="wrapper auto-grid">
-            <article class="[ card ]">
-                            <div class="[ card__img ]">
-                                <img src="https://source.unsplash.com/random/300x350?music" alt="Una vista previa de la partitura"/>
-                            </div>
-                            <div class="[ card__content ] [ flex ]">
-                                <h3>Colores</h3>
-                                <a href="" class="btn">Comprar</a>
-                            </div>
-                        </article>
-
-                        <article class="[ card ]">
-                            <div class="[ card__img ]">
-                                <img src="https://source.unsplash.com/random/299x350?music" alt="Una vista previa de la partitura"/>
-                            </div>
-                            <div class="[ card__content ] [ flex ]">
-                                <h3>Colores</h3>
-                                <a href="" class="btn">Comprar</a>
-                            </div>
-                        </article>
-
-                        <article class="[ card ]">
-                            <div class="[ card__img ]">
-                                <img src="https://source.unsplash.com/random/301x350?music" alt="Una vista previa de la partitura"/>
-                            </div>
-                            <div class="[ card__content ] [ flex ]">
-                                <h3>Colores</h3>
-                                <a href="" class="btn">Comprar</a>
-                            </div>
-                        </article>
+            {% for partitura in items %}
+                <article class="[ card ]">
+                    <div class="[ card__img ]">
+                        <img src="https:{{ partitura.imagen.fields.file.url }}" alt="{{ partitura.imagen.fields.description }}"/>
+                    </div>
+                    <div class="[ card__content ] [ flex ]">
+                        <div>
+                            <h3 class="card__title">{{ partitura.title }}</h3>
+                            <p class="card__info">${{ partitura.precio.toLocaleString("es-CO") }}</p>
+                        </div>
+                        <button class="snipcart-add-item btn" data-item-id="{{ partitura.id }}" data-item-price="{{ partitura.precio }}" data-item-url="{{ page.url }}" data-item-description="{{ partitura.descripcionCorta }}" data-item-file-guid="{{ partitura.guid }}" data-item-image="https:{{ partitura.imagen.fields.file.url }}" data-item-max-quantity="1" data-item-name="{{ partitura.title }}">
+                            Comprar
+                        </button>
+                    </div>
+                </article>
+            {% endfor %}
         </div>
+        {% include "partials/pagination.njk" %}
     </section>
-    
 {% endblock %}

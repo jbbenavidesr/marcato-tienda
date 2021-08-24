@@ -4,5 +4,5 @@
         auto-fit,
         minmax(min(var(--auto-grid-min-size, 18rem), 100%), 1fr)
     );
-    grid-gap: 1rem;
+    grid-gap: var(--auto-grid-gap, 2.5em);
 }

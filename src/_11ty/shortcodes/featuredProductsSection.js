@@ -31,12 +31,12 @@ module.exports = async function (featuredProductSection) {
                                     data-item-price="${response.fields.precio}"
                                     data-item-url="${url}"
                                     data-item-description="${
-                                        response.fields.descripcionLarga
+                                        response.fields.descripcionCorta
                                     }"
                                     data-item-file-guid="${
                                         response.fields.guid
                                     }"
-                                    data-item-image="${
+                                    data-item-image="https:${
                                         response.fields.imagen.fields.file.url
                                     }"
                                     data-item-max-quantity="1"

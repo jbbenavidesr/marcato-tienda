@@ -10,6 +10,7 @@ module.exports = function () {
         .then(function (response) {
             const partitura = response.items.map(function (partitura) {
                 partitura.fields.date = new Date(partitura.sys.updatedAt);
+                partitura.fields.id = partitura.sys.id;
                 return partitura.fields;
             });
             return partitura;
