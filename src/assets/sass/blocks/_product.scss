@@ -1,0 +1,17 @@
+.product {
+    margin-bottom: 3em;
+
+    & > * + * {
+        margin-top: var(--base-size);
+    }
+
+    &__title {
+        font-size: var(--fs-600);
+    }
+
+    &__description {
+        h2 {
+            font-size: var(--fs-500);
+        }
+    }
+}

@@ -38,7 +38,7 @@ module.exports = async function (featuredProductSection) {
                                 ${cards.join("")}
                             </div>
                             <div>
-                                <a href="/catalog/" class="[ btn ]">${
+                                <a href="/partituras/" class="[ btn ]">${
                                     featuredProductSection.fields.ctaText
                                 }</a>
                             </div>
