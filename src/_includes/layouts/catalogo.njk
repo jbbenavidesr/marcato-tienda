@@ -14,7 +14,7 @@
     </div>
     <section id="product-list">
         <div class="wrapper auto-grid">
-            {% for partitura in items %}
+            {% for partitura in partituras %}
                 {% productCard partitura, page.url, 2 %}
             {% endfor %}
         </div>

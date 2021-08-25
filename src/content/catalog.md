@@ -3,7 +3,7 @@ title: "Tienda"
 pagination:
     data: partituras
     size: 6
-    alias: items
+    alias: partituras
     addAllPagesToCollections: true
 permalink: "/partituras{% if pagination.pageNumber > 0 %}/pagina/{{ pagination.pageNumber }}{% endif %}/index.html"
 tags: "partituras"
