@@ -4,6 +4,16 @@ const client = contentful.createClient({
     accessToken: process.env.CTFL_ACCESSTOKEN,
 });
 
+/**
+ * This shortcode makes an API request to contentful and
+ * gets the specific content included in the section.
+ *
+ * TODO: Check if it can be taken from the partituras data file and remove
+ * one API call.
+ *
+ * Additionally, given how similar it is to the product one, I guess they can
+ * be refactored into one.
+ */
 module.exports = async function (featuredBlogPostsSection) {
     return await Promise.all(
         featuredBlogPostsSection.fields.postList.map(function (post) {

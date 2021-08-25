@@ -15,20 +15,7 @@
     <section id="product-list">
         <div class="wrapper auto-grid">
             {% for partitura in items %}
-                <article class="[ card ]">
-                    <div class="[ card__img ]">
-                        <img src="https:{{ partitura.imagen.fields.file.url }}" alt="{{ partitura.imagen.fields.description }}"/>
-                    </div>
-                    <div class="[ card__content ] [ flex ]">
-                        <div>
-                            <h3 class="card__title">{{ partitura.title }}</h3>
-                            <p class="card__info">${{ partitura.precio.toLocaleString("es-CO") }}</p>
-                        </div>
-                        <button class="snipcart-add-item btn" data-item-id="{{ partitura.id }}" data-item-price="{{ partitura.precio }}" data-item-url="{{ page.url }}" data-item-description="{{ partitura.descripcionCorta }}" data-item-file-guid="{{ partitura.guid }}" data-item-image="https:{{ partitura.imagen.fields.file.url }}" data-item-max-quantity="1" data-item-name="{{ partitura.title }}">
-                            Comprar
-                        </button>
-                    </div>
-                </article>
+                {% productCard partitura, page.url, 2 %}
             {% endfor %}
         </div>
         {% include "partials/pagination.njk" %}

@@ -4,8 +4,15 @@ const client = contentful.createClient({
     accessToken: process.env.CTFL_ACCESSTOKEN,
 });
 
-const imageProcessing = require("../utils/imageProcessing");
+const productCard = require("./productCard");
 
+/**
+ * This shortcode makes an API request to contentful and
+ * gets the specific content included in the section.
+ *
+ * TODO: Check if it can be taken from the partituras data file and remove
+ * one API call.
+ */
 module.exports = async function (featuredProductSection) {
     const url = this.page.url;
     return await Promise.all(
@@ -13,38 +20,8 @@ module.exports = async function (featuredProductSection) {
             return client
                 .getEntry(partitura.sys.id)
                 .then(function (response) {
-                    return `<article class="[ card ]">
-                            <div class="[ card__img ]">
-                                ${imageProcessing(response.fields.imagen)}
-                            </div>
-                            <div class="[ card__content ] [ flex ]">
-                                <div>
-                                    <h3 class="card__title">${
-                                        response.fields.title
-                                    }</h3>
-                                    <p class="card__info">$${response.fields.precio.toLocaleString(
-                                        "es-CO"
-                                    )}</p>
-                                </div>
-                                <button class="snipcart-add-item btn" 
-                                    data-item-id="${partitura.sys.id}"
-                                    data-item-price="${response.fields.precio}"
-                                    data-item-url="${url}"
-                                    data-item-description="${
-                                        response.fields.descripcionCorta
-                                    }"
-                                    data-item-file-guid="${
-                                        response.fields.guid
-                                    }"
-                                    data-item-image="https:${
-                                        response.fields.imagen.fields.file.url
-                                    }"
-                                    data-item-max-quantity="1"
-                                    data-item-name="${response.fields.title}">
-                                    Comprar
-                                </button>
-                            </div>
-                        </article>`;
+                    response.fields.id = response.sys.id;
+                    return productCard(response.fields, url, 3);
                 })
                 .catch(function (error) {
                     console.log(error);
