@@ -15,7 +15,7 @@
     <section id="product-list">
         <div class="wrapper auto-grid">
             {% for partitura in partituras %}
-                {% productCard partitura, page.url, 2 %}
+                {% productCard partitura, page.url, contentful.assets, 2 %}
             {% endfor %}
         </div>
         {% include "partials/pagination.njk" %}

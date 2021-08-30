@@ -4,7 +4,7 @@
         <article class="[ product ]">
             <h1 class="product__title">{{ partitura.title }}</h1>
             <div class="product__img">
-                <img src="https:{{ partitura.imagen.fields.file.url }}" alt=""/>
+                {% image partitura.imagen.sys.id, contentful.assets %}
             </div>
             <div class="product__audio">
                 <audio controls="controls" id="audio-player">

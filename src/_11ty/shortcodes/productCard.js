@@ -1,4 +1,4 @@
-const imageProcessing = require("../utils/imageProcessing");
+const imageProcessing = require("./image");
 
 /**
  * This is the product-card component that'll be used for displaying products.
@@ -9,7 +9,7 @@ const imageProcessing = require("../utils/imageProcessing");
  * @param headingLevel number from 2 to 6 with the level of the heading the card
  * 						should have. Usually 2 or 3. 3 by default.
  */
-module.exports = function (product, url, headingLevel = 3) {
+module.exports = async function (product, url, assets, headingLevel = 3) {
     return `<article class="[ product-card ]">
 				<div class="[ product-card__content ] [ flow ]">
 					<div>
@@ -36,7 +36,7 @@ module.exports = function (product, url, headingLevel = 3) {
 					</button>
 				</div>
 				<div class="[ product-card__img ]">
-					${imageProcessing(product.imagen)}
+					${await imageProcessing(product.imagen.sys.id, assets)}
 				</div>
 			</article>`;
 };

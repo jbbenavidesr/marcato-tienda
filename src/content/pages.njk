@@ -18,7 +18,7 @@ eleventyComputed:
   {% elif component.sys.contentType.sys.id == "contentSection" %}
     {% contentSection component %}
   {% elif component.sys.contentType.sys.id == "featuredProductsSection" %}
-    {% featuredProductsSection component %}
+    {% featuredProductsSection component, contentful.assets %}
   {% elif component.sys.contentType.sys.id == "featuredBlogPostsSection" %}
     {% featuredBlogPostsSection component %}
   {% endif %}

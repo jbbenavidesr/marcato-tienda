@@ -2,11 +2,11 @@
     <div class="wrapper flow">
         <div class="[ site-foot__inner ] [ border-bottom ]">
             <div>
-                <a href="/" class="site-foot__brand" aria-label="{{ site.name }} - Página Principal">
-                    <img src="https:{{ site.brandImages[1].fields.file.url }}" alt=""/>
+                <a href="/" class="site-foot__brand" aria-label="{{ contentful.globalData[0].name }} - Página Principal">
+                    {% image contentful.globalData[0].brandImages[1].sys.id, contentful.assets %}
                 </a>
                 <ul class="[ site-foot__links ] [ flex flex--justify-start flex--gap ]" role="list">
-                    {% for link in site.footer.links %}
+                    {% for link in contentful.globalData[0].footer.links %}
                         <li class="site-foot__link">
                             <a href="{{ link.url }}">{{ link.texto }}</a>
                         </li>
@@ -15,14 +15,14 @@
             </div>
             <div class="flow">
                 <header>
-                    <h3>{{ site.footer.subscribeForm.title }}</h3>
-                    <p>{{ site.footer.subscribeForm.description }}</p>
+                    <h3>{{ contentful.globalData[0].footer.subscribeForm.title }}</h3>
+                    <p>{{ contentful.globalData[0].footer.subscribeForm.description }}</p>
                 </header>
                 <form class="[ site-foot__subscription ]">
-                    <label class="weight-800 " for="subscribe">{{ site.footer.subscribeForm.label }}</label>
+                    <label class="weight-800 " for="subscribe">{{ contentful.globalData[0].footer.subscribeForm.label }}</label>
                     <div class="inline-form">
                         <input type="email" id="subscribe" name="email" placeholder="nombre@email.com" class="inline-form__input"/>
-                        <button class="btn btn--sm inline-form__btn">{{ site.footer.subscribeForm.submitButton }}</button>
+                        <button class="btn btn--sm inline-form__btn">{{ contentful.globalData[0].footer.subscribeForm.submitButton }}</button>
                     </div>
                 </form>
             </div>

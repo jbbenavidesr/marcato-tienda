@@ -13,7 +13,7 @@ const productCard = require("./productCard");
  * TODO: Check if it can be taken from the partituras data file and remove
  * one API call.
  */
-module.exports = async function (featuredProductSection) {
+module.exports = async function (featuredProductSection, assets) {
     const url = this.page.url;
     return await Promise.all(
         featuredProductSection.fields.productList.map(function (partitura) {
@@ -21,7 +21,7 @@ module.exports = async function (featuredProductSection) {
                 .getEntry(partitura.sys.id)
                 .then(function (response) {
                     response.fields.id = response.sys.id;
-                    return productCard(response.fields, url, 3);
+                    return productCard(response.fields, url, assets, 3);
                 })
                 .catch(function (error) {
                     console.log(error);

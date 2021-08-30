@@ -2,8 +2,8 @@
     <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="wrapper">
         <div class="site-head__inner">
-            <a href="/" class="site-head__brand" aria-label="{{ site.name }} - Página Principal">
-                <img src="https:{{ site.brandImages[0].fields.file.url }}" alt=""/>
+            <a href="/" class="site-head__brand" aria-label="{{ contentful.globalData[0].name }} - Página Principal">
+                {% image contentful.globalData[0].brandImages[0].sys.id, contentful.assets %}
             </a>
             <div class="[ flex flex--gap ]">
                 <burger-menu>
