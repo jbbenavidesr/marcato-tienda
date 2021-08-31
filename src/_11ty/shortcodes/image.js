@@ -1,11 +1,5 @@
 const Image = require("@11ty/eleventy-img");
-const path = require("path");
-
-const getPhoto = function (photoID, assets) {
-    return assets.find(function (asset) {
-        return asset.id === photoID;
-    });
-};
+const getPhoto = require("../utils/getPhoto");
 
 /**
  * Shortcode for getting images html with the image Plugin.
