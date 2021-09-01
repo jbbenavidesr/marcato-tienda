@@ -1,0 +1,26 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+    <section class="[ featured-blog-posts-section ]">
+        <header class="[ featured-blog-posts-section__heading ] [ align-center ]">
+            <h2>{{ title }}</h2>
+        </header>
+        <div class="wrapper">
+            <article class="[ gallery ] [ flow flow-space-800 ]">
+                {% for item in blogPosts %}
+                    <figure class="[ gallery__item ] [ flow ]">
+                        <div class="[ gallery__media ]">
+                            {% image item.imagen.sys.id, contentful.assets %}
+                        </div>
+                        <figcaption class="[ gallery__content ] [ flow ]">
+                            <h2 class="[ gallery__heading ]">
+                                {{ item.title }}
+                            </h2>
+                            <a href="/blog/{{ item.slug |slug }}/" class="btn">Leer más</a>
+                        </figcaption>
+                    </figure>
+                {% endfor %}
+            </article>
+            {{ include "partials/pagination.njk" }}
+        </div>
+    </section>
+{% endblock %}
