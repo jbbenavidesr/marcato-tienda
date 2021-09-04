@@ -11,6 +11,10 @@ const featuredBlogPostsSection = require(shortcodePath +
 const productCard = require(shortcodePath + "productCard");
 const image = require(shortcodePath + "image");
 
+// Import filters
+const richTextToHtml = require("./src/_11ty/filters/richTextToHtml");
+const formatDate = require("./src/_11ty/filters/formatDate");
+
 module.exports = function (eleventyConfig) {
     // Set directories to pass through to the dist folder
     eleventyConfig.addPassthroughCopy("./src/assets/images/");
@@ -33,6 +37,10 @@ module.exports = function (eleventyConfig) {
         featuredBlogPostsSection
     );
     eleventyConfig.addNunjucksAsyncShortcode("image", image);
+
+    // Define Filters
+    eleventyConfig.addFilter("richTextToHtml", richTextToHtml);
+    eleventyConfig.addFilter("formatDate", formatDate);
 
     return {
         markdownTemplateEngine: "njk",

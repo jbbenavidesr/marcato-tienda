@@ -1,0 +1,45 @@
+.blog-post {
+    &__tema {
+        font-weight: 600;
+    }
+
+    h1 {
+        font-size: var(--fs-700);
+    }
+
+    h2 {
+        font-size: var(--fs-600);
+    }
+
+    h3 {
+        font-size: var(--fs-500);
+    }
+
+    :is(h2, h3) {
+        --flow-space: var(--fs-700);
+    }
+
+    time {
+        font-size: var(--fs-300);
+        display: block;
+    }
+
+    img {
+        max-width: min(55rem, 100%);
+    }
+
+    figcaption {
+        font-size: var(--size-300);
+
+        font-style: italic;
+        margin-top: 1rem;
+    }
+
+    blockquote {
+        padding-left: var(--fs-600);
+        border-left: 5px solid;
+        font-style: italic;
+
+        font-size: var(--fs-500);
+    }
+}

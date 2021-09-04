@@ -1,0 +1,15 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+    <section class="blog-post bg-quinary-200">
+        <div class="wrapper">
+            <header class="">
+                <p class="blog-post__tema">{{ blogPost.tema.fields.tema }}</p>
+                <h1>{{ title }}</h1>
+                <time>{{ blogPost.date | formatDate }}</time>
+            </header>
+            <article class="flow">
+                {{ blogPost.contenido | richTextToHtml | safe }}
+            </article>
+        </div>
+    </section>
+{% endblock %}

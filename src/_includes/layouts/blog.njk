@@ -2,7 +2,7 @@
 {% block content %}
     <section class="[ featured-blog-posts-section ]">
         <header class="[ featured-blog-posts-section__heading ] [ align-center ]">
-            <h2>{{ title }}</h2>
+            <h1>{{ title }}</h1>
         </header>
         <div class="wrapper">
             <article class="[ gallery ] [ flow flow-space-800 ]">
@@ -20,7 +20,7 @@
                     </figure>
                 {% endfor %}
             </article>
-            {{ include "partials/pagination.njk" }}
+            {% include "partials/pagination.njk" %}
         </div>
     </section>
 {% endblock %}
