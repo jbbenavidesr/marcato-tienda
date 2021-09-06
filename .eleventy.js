@@ -4,6 +4,7 @@ require("dotenv").config();
 const shortcodePath = "./src/_11ty/shortcodes/";
 const heroSection = require(shortcodePath + "heroSection");
 const contentSection = require(shortcodePath + "contentSection");
+const genericContentSection = require(shortcodePath + "genericContentSection");
 const featuredProductsSection = require(shortcodePath +
     "featuredProductsSection");
 const featuredBlogPostsSection = require(shortcodePath +
@@ -27,6 +28,7 @@ module.exports = function (eleventyConfig) {
     // Define shortcodes
     eleventyConfig.addShortcode("heroSection", heroSection);
     eleventyConfig.addShortcode("contentSection", contentSection);
+    eleventyConfig.addShortcode("genericContentSection", genericContentSection);
     eleventyConfig.addNunjucksAsyncShortcode("productCard", productCard);
     eleventyConfig.addNunjucksAsyncShortcode(
         "featuredProductsSection",
