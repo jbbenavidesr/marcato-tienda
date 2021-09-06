@@ -17,12 +17,12 @@ module.exports = async function (photoID, assets) {
     }
     let metadata = await Image(src, {
         widths: [600, 900, 1500],
-        formats: ["webp", "jpeg"],
+        formats: ["webp", "png"],
         urlPath: "/assets/images/",
         outputDir: "./public/assets/images/",
     });
-    let lowsrc = metadata.jpeg[0];
-    let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+    let lowsrc = metadata.png[0];
+    let highsrc = metadata.png[metadata.png.length - 1];
     return `<picture>
     ${Object.values(metadata)
         .map((imageFormat) => {

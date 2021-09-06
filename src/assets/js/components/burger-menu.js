@@ -1,5 +1,4 @@
-import getFocusableElements from '../utilities/get-focusable-elements.js';
-
+import getFocusableElements from "../utilities/get-focusable-elements.js";
 
 class BurgerMenu extends HTMLElement {
     constructor() {
@@ -34,14 +33,13 @@ class BurgerMenu extends HTMLElement {
         this.initialMarkup = this.innerHTML;
         this.render();
 
-        const observer = new ResizeObserver(observedItems => {
-            const {contentRect} = observedItems[0];
+        const observer = new ResizeObserver((observedItems) => {
+            const { contentRect } = observedItems[0];
             this.state.enabled = contentRect.width <= this.maxWidth;
-          });
-          
-          // We want to watch the parent like a hawk
-          observer.observe(this.parentNode);
-          
+        });
+
+        // We want to watch the parent like a hawk
+        observer.observe(this.parentNode);
     }
 
     render() {
@@ -82,6 +80,12 @@ class BurgerMenu extends HTMLElement {
                 }
             });
 
+            this.panel.addEventListener("click", (evt) => {
+                if (!evt.target.matches("a")) return;
+
+                this.toggle("closed");
+            });
+
             return;
         }
 
@@ -90,56 +94,66 @@ class BurgerMenu extends HTMLElement {
 
     toggle(forcedStatus) {
         if (forcedStatus) {
-          if (this.state.status === forcedStatus) {
-            return;
-          }
-      
-          this.state.status = forcedStatus;
-        } else {
-          this.state.status = this.state.status === 'closed' ? 'open' : 'closed';
-        }
-      }
+            if (this.state.status === forcedStatus) {
+                return;
+            }
 
-      processStateChange() {
-        this.root.setAttribute('status', this.state.status);
-        this.root.setAttribute('enabled', this.state.enabled ? 'true' : 'false');
-      
+            this.state.status = forcedStatus;
+        } else {
+            this.state.status =
+                this.state.status === "closed" ? "open" : "closed";
+        }
+    }
+
+    processStateChange() {
+        this.root.setAttribute("status", this.state.status);
+        this.root.setAttribute(
+            "enabled",
+            this.state.enabled ? "true" : "false"
+        );
+
         this.manageFocus();
-      
+
         switch (this.state.status) {
-          case 'closed':
-            this.trigger.setAttribute('aria-expanded', 'false');
-            this.trigger.setAttribute('aria-label', 'Open menu');
-            break;
-          case 'open':
-          case 'initial':
-            this.trigger.setAttribute('aria-expanded', 'true');
-            this.trigger.setAttribute('aria-label', 'Close menu');
-            break;
+            case "closed":
+                this.trigger.setAttribute("aria-expanded", "false");
+                this.trigger.setAttribute("aria-label", "Open menu");
+                break;
+            case "open":
+            case "initial":
+                this.trigger.setAttribute("aria-expanded", "true");
+                this.trigger.setAttribute("aria-label", "Close menu");
+                break;
         }
-      }
-      
-      manageFocus() {
+    }
+
+    manageFocus() {
         if (!this.state.enabled) {
-          this.focusableElements.forEach(element => element.removeAttribute('tabindex'));
-          return;
+            this.focusableElements.forEach((element) =>
+                element.removeAttribute("tabindex")
+            );
+            return;
         }
-      
+
         switch (this.state.status) {
-          case 'open':
-            this.focusableElements.forEach(element => element.removeAttribute('tabindex'));
-            break;
-          case 'closed':
-            [...this.focusableElements]
-              .filter(
-                element => element.getAttribute('data-element') !== 'burger-menu-trigger'
-              )
-              .forEach(element => element.setAttribute('tabindex', '-1'));
-            break;
+            case "open":
+                this.focusableElements.forEach((element) =>
+                    element.removeAttribute("tabindex")
+                );
+                break;
+            case "closed":
+                [...this.focusableElements]
+                    .filter(
+                        (element) =>
+                            element.getAttribute("data-element") !==
+                            "burger-menu-trigger"
+                    )
+                    .forEach((element) =>
+                        element.setAttribute("tabindex", "-1")
+                    );
+                break;
         }
-      }
-      
-      
+    }
 }
 
 if ("customElements" in window) {
