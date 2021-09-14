@@ -1,14 +1,29 @@
-<section id="contact">
-    <div class="[ wrapper ] [ split ]">
-        <div class="flow">
-            <header>
-                <h2 class="text-cuaternary-400 weight-800">Contacto</h2>
+<section class="[ contact ] [ bg-primary-400 ]" id="contacto" tabindex="-1">
+    <div class="wrapper">
+        <div class="[ contact__inner ]">
+            <header class="flow">
+                <h2 class="[ contact__heading ][ weight-800 ]">{{ site.globalCTA.title }}</h2>
+                <p class="[ contact__summary ]">{{ site.globalCTA.content }}</p>
             </header>
-            <div>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus quo ipsa placeat autem nihil quod odit quam pariatur tempore eum.</p>
+            <div class="contact__action">
+                <form name="contact" method="POST" data-netlify="true" action="/gracias-por-contactarnos/" class="flow">
+                    <div>
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="name" value="" autocorrect="off" required/>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" autocapitalize="none" autocorrect="off" required/>
+                    </div>
+                    <div>
+                        <label for="message">Mensaje</label>
+                        <textarea name="message" id="message" rows="5"></textarea>
+                    </div>
+                    <div>
+                        <button class="btn btn--sm" type="submit">Enviar</button>
+                    </div>
+                </form>
             </div>
         </div>
-        <div>
-            <img src="/assets/images/Contacto.png" alt="" class=""/></div>
     </div>
 </section>

@@ -1,0 +1,45 @@
+.contact {
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3em;
+
+        & > :first-child {
+            flex-basis: 25%;
+            flex-grow: 1;
+        }
+
+        & > :last-child {
+            flex-basis: 0;
+            flex-grow: 999;
+            min-width: 35%;
+        }
+    }
+
+    label {
+        font-weight: 600;
+        display: block;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        background-color: var(--btn-color);
+        border-radius: 0.5em;
+        border: solid 3px var(--btn-background);
+        padding: 0.3em;
+
+        &::placeholder {
+            color: var(--btn-background);
+            opacity: 0.5;
+        }
+    }
+
+    .btn {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    --btn-background: var(--clr-neutral-200);
+    --btn-color: var(--clr-primary-400);
+}
